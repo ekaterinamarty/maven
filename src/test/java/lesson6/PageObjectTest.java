@@ -1,10 +1,8 @@
 package lesson6;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -32,6 +30,8 @@ public class PageObjectTest {
                 .setInputAge("8")
                 .timeSlotChoice()
                 .bookingContentPage();
+                Assertions.assertEquals
+                        (driver.findElement(By.xpath("//div[@class='booking-step__content']")).isDisplayed(), true);
     }
 
     @AfterEach
