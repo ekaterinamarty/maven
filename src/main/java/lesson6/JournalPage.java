@@ -1,5 +1,6 @@
 package lesson6;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +15,7 @@ public class JournalPage extends BasePage {
     @FindBy(xpath = "(//div[@class='article-card-wrap']//span[@class='link--hover-blue article-card-author__text'])[1]")
     public WebElement doctorChoice;
 
+    @Step("Клик по ФИО врача из последней публикации в Журнале")
     public DoctorProfilePage clickDoctorChoice() {
         webDriverWait.until(ExpectedConditions.visibilityOf(doctorChoice));
         doctorChoice.click();

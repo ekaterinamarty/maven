@@ -4,6 +4,7 @@ package lesson6;
 // Онлайн-консультация --> Чек-бокс Я записываю ребенка --> 8 --> выбрать второй временной слот -->
 // EP: выбрано указанное время, переход на страницу авторизации/регистрации для продолжения записи
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ public class MainPage extends BasePage {
     @FindBy(xpath = "//div[@class='b-header__bottom container mobile-container']//span[text()[contains(.,'Журнал')]]")
     public WebElement journalBtn;
 
+    @Step("Клик на Журнал в хедере")
     public JournalPage clickJournalBtn() {
         webDriverWait.until(ExpectedConditions.visibilityOf(journalBtn));
         journalBtn.click();
